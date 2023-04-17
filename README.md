@@ -2,7 +2,7 @@
 
 ## Types:
 
-1) Solution Architect
+1 - Solution Architect
   - Stays between the business area and the software
   - It is a technical area with a great vision of the business
   - Transform the business requirement into software solution
@@ -11,10 +11,12 @@
   - He will analyze the commercial impact when choosing a technology
   - Participate in commercial meetings of pre-sail or sail to show technical details
   - He can analyze costs to the business
-2) Technology Architect:
+  
+2 - Technology Architect:
   - A Specialty based in a specific technology
   - Ex: Elastic Architect (specialty in ElasticStack), Java Architect, SQL Server, SAP, Salesforce, etc.
-3) Enterprise Architect
+  
+3 - Enterprise Architect
   - Impact the whole organization
   - Evaluation of new technologies to define which one will be used
   - Technology Standardization in the company
@@ -23,7 +25,7 @@
   - Migrations
   - Core Systems of the company
   
-4) Software Architect
+4 - Software Architect
   - A Software Engineering discipline
   - Directly relation to the software development
   - "Low Level"
