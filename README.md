@@ -31,9 +31,9 @@
   - How the software will be developed according to the team formation.
   - It is the relation between the goal business and their restrictions, with the components that will be created and the responsibilities, aiming the software evolution
   * Roles:
-    - Transform business requirements into arquitecture pattern
+    - Transform business requirements into architecture pattern
     - Orchestrate devs and domain experts
-    - Undertand deeply concepts and architecture models
+    - Understand deeply concepts and architecture models
     - Assists in decision making when everything is not good
     - Reinforce good development practices
     - Code Review
@@ -45,5 +45,34 @@
     - Good project patterns, development and good practices
     - Clarify of the software impact in the company
     - Make decisions with confidence
-    
+
 ## Architecture VS Design
+  - Architecture: Global Scope, High Level (components, abstractions, etc)
+  - Design: Local Scope (class responsibilities, patterns, etc)
+  - Both go together. There is a discussion of what each one means.
+
+## Sustainability
+  - Software is expensive
+  - Software has to be paid in long term
+  - Software needs to follow the business evolution
+  - The solution needs to be architected
+
+## Pillars
+  - Structure
+  - Easy evolution to attend requirement business
+  - Components
+  - Systems relationship
+  - Governance (patterns, rules, documentation, definitions, languages, protocols, systems to communicate)
+    * If someone goes away from the company, the project cannot finish
+
+## Architectural Requirements
+  - Performance
+  - Data storage
+  - Scalability
+  - Security
+  - Legal (ex: LGPD)
+  - Audit
+  - Marketing
+
+## Features
+  - 
