@@ -77,4 +77,25 @@
   - Marketing
 
 ## Features
-  - 
+  - We should think in some features before begin a system, we should not depend on luck. These answers will define what technologies you will use and how your system will be architected.
+  1 - Operational Features
+    * Availability (SLA, SLO) (Ex: observability to check)
+    * Disaster Recovery (Ex: how we should act when the system will get offline. Ex: Multi-Region in case a Region fails. Ex: Terraform to recreate the whole structure)
+    * Performance (Ex: latency and throughput (capacity of receive requests))
+    * Recovery (Backup) (Ex: check if the backup is ok in a period and put it in another network)
+    * Reliability and Security (Ex: Brute force in an endpoint)
+    * Robust: (Ex: if a Availability Zone go down, what you should do?)
+    * Scalability (Ex: Vertically or Horizontally)
+    
+  2 - Structural Features
+    * Configurable (Ex: How ease is the changing of a Config. Ex: Envirenment Variable, Key of the API Gateway). Think: If you put your application in the Stage Env and you have to change something in your code to get the application work, it is not OK!
+    * Extensibility (Ex: The application has to be thinked in get bigger)
+    * Easy Installation (Ex: Containers)
+    * Reusable Components (Ex: libraries. Usually separated teams create different solutions. It is good to centralize it and create a team to maintain these libraries)
+    * Internalization (In the frontend, when we change the language, the things sometimes not work exatcly as we expected. Think it. In the backend: Think not only texts, but: Coin, Conversions, Payment, etc)
+    * Easy Maintenance (it is not so simple. The major difficult is a complex solution gets simple. SOLID, Layes, Adapters, Interfaces, Design Patters, Accoplaments. Quertions: It is easy to add new features? It is easy to fix some points? There are Tests?
+    * Portability (Ex: more than one database. OBS: it os not so easy to change database, however, Will be a lot of impacts if we change the Database? Ex: you are working with Elastic Stack, It will be easy to change to NewRealic? Maybe will be better to work with OpenTelemetry. Ex: It is easy to change the Payment Gateway? Etc.)
+    * Easy Support (Ex: logs, Debugging. A way to see the problems before the client call to the team. Observability in general)
+    
+  3 - Cross-Cutting Features
+    * 
