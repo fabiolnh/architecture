@@ -99,4 +99,14 @@
   * Easy Support (Ex: logs, Debugging. A way to see the problems before the client calls the team. Observability in general)
     
 3 - Cross-Cutting Features
-  * 
+  * Accessibility (Is it easy for other people to use the platform?)
+  * Process of Retention and Recovery Data (How long will the data be saved? Ex: How long will the Data will be in a topic on Kafka? Ex: Keep the data in a storage that is less expensive. Ex: S3 Deep Archive)
+  * Authentication and Authorization (Ex: Authenticate the user in the API Gateway, before it gets into the services, if we are talking about microservices)
+  * Legal (Data conformity in Laws)
+  * Privacity (Ex: LGPD)
+  * Security (Web Firewall, Think the security before it gets into the service, Mechanisms to identify Bots, SQL Injection, Cross Site Scripting, Use everything that is open pattern (do not create anything))
+  * Usability (not only in the frontend, but also in the backend: the api has documentation? Is there OpenApi? Is there a good contract to make available to others? Is it easy to reuse? Is there a README file?)
+
+## Performance
+
+- 
