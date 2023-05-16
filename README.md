@@ -132,3 +132,10 @@
   * Concurrency and Parallelism (work with a language that allows you to use it)
   * Database (types and schema)
   * Caching
+
+- Vertical Scaling: Increase the compute resources
+- Horizontal Scaling: Increase the number of machines or pods, putting a load balancer in front of them
+
+- Serial: A blocking process that can do one thing each time
+- Concurrency: To lead with a lot of things in the same time
+- Parallelism: To do a lot of thing in the same time
