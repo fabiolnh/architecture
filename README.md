@@ -109,4 +109,26 @@
 
 ## Performance
 
-- 
+- Units:
+  * Latency (Response time)
+  * Throughput (how many requests the software can handle)
+
+- A Performable Software is different than a scalable software
+
+- How to perform?
+  * Decrease the response time (if you are measuring in seconds, not in milliseconds, probably the software is not performable, depending in each case, obviously)
+  * Check application processing, network and external calls
+  * Increase the throughput (allow more requests)
+
+- Main reasons for slow performance:
+  * Insufficient processing
+  * Limited computer resources
+  * Work with a blocking way (find a way to not wait a single thread finish to receive other call)
+  * Serial access (occurs when a software waits for a request to finish to receive the next one, such as a unique thread to receive all the requests)
+
+- Main ways to increase the performance:
+  * Scale the compute capacity (CPU, disk, memory, Network)
+  * Logic behind the software (algorithms, queries, framework overhead)
+  * Concurrency and Parallelism (work with a language that allows you to use it)
+  * Database (types and schema)
+  * Caching
