@@ -109,6 +109,8 @@
 
 ## Performance
 
+- Focus: Reduce latency and increase the throughput
+
 - Units:
   * Latency (Response time)
   * Throughput (how many requests the software can handle)
@@ -139,3 +141,55 @@
 - Serial: A blocking process that can do one thing each time
 - Concurrency: To lead with a lot of things in the same time
 - Parallelism: To do a lot of thing in the same time
+
+- Caching:
+  - Types:
+    * Edge Computing: the cache is kept very near from the final user. Not only CDN (Ex: CloudFront, Cloudflare Workers, Vercel, Akamai), but also a proccessment near the final user (Ex: Lambda Edge)
+    * Static: Images, CSS, etc (Ex: CloudFront)
+    * Web: Cache without call the "backend"
+    * Internal Functions Caching: 
+      * Avoid reprocessing heavy algorithms
+      * Avoid access the Database (very expensive: IO, network)
+    * Objects: Using ORM
+    
+  - Exclusive VS Shared:
+    * Exclusive: 
+      - Processed in that machine (Low latency). 
+      - It is duplicated among nodes
+      - Problem working with sessions
+    * Shared: 
+      - Bigger Latency
+      - A centralized cache
+      - No cache duplication
+      - Shared Sessions
+      - External Database (Ex: MySQL, Redis, Memcache)
+
+## Scalability
+
+  - Focus: The possibility to increase or decrease the throughput adding or removing the computational capacity
+  
+  - Vertical Scaling: Increase the compute resources (there is a limit)
+  - Horizontal Scaling: Increase the number of machines or pods, putting a load balancer in front of them
+    * Attention Points:
+      - Efêmero Disk (the data in the disk is lost): The disk is only for temporary files.
+      - Application Server (app. this one that will be scalable) VS Assets Server (CSS, images, etc. are has to be in another server) 
+      - Centralized Cache (Shared Cache. The cache will not be in the machine)
+      - Centralized Sessions (In a cache server). The app does not keep state (It has to be Stateless). 
+      - Upload (the files will not be kept in the machine)
+
+  - Scaling the database:
+    * Increasing the Computational Resources
+    * Share Responsibilities (Read and Write). Ex: Create a Database for Read (Read Replica) and other to Write
+    * Shards in an horizontal format. Ex: Add a lot of Read Replicas or change the database type
+    * Serverless. (You do not worry about server level)
+    * Query and Index Optimization
+       - You have to have an APM to measure everything (doing some "explain" in the queries, to show each step and see which one is slow)
+       - Work with Index in a consistent way
+       - CQRS (Command Query Responsibility Segregation): A pattern to develop the software ("commands" to record the data and "query" to read the data)
+
+  - Reverse Proxy:
+    * Normal Proxy: When the user accesses some site, the proxy redirects it this site or other site (in case that is a malicious site)
+    * Reversed Proxy: When the user accesses something, the proxy forwards the request to a server that the proxy knows that will answer the request to the user (it is a proxy that stays in front of web servers and has rules, forwarding the client requests to that servers)
+      - Ex: a.teste.com -> A Server
+      - Ex: b.teste.com -> B Server
+      - Ex: NgInx (Pronunciation: Engine X) (the most famous), HAProxy (High Availability), Traefik 
