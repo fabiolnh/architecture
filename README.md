@@ -193,3 +193,30 @@
       - Ex: a.teste.com -> A Server
       - Ex: b.teste.com -> B Server
       - Ex: NgInx (Pronunciation: Engine X) (the most famous), HAProxy (High Availability), Traefik 
+
+## Resiliency
+
+- A "B Plan" (a second strategy) to attend the client request. We need to adapt the software
+- Sometime the software will fail
+- Strategies:
+  * Protect and be protected: 
+    - Auto preservation to guarantee the quality among requests
+    - A slow system is worst than an offline system
+    - in a distributed system, you cannot send a lot of requests in a service that is failing
+  * Health Check:
+    - A system that is not health has the possibility to recover itself if traffic stops to be sent to it
+    - A Quality Health Check (not only if the system is up, but create a strategy to check what data should be 200, like database queries, etc.)
+  * Rate Limit:
+    - Protect the system based in how many requests it can support (to know how many, do a stress test, check the company budget, how many machines, etc)
+    - Ex: max 100 requests per second (more than this, return another status)
+    - You can custom limit per client
+  * Circuit Breaker
+    - Return other status(ex: 500) when the request is denied. (open the circuit to block it)
+    - Closed Circuit: when the system is recovered (common requests)
+    - Opened Circuit: blocked requests. The request is not delivered.
+    - Half Opened Circuit: Allow a limited request to check if the system has condition to become available again (ex: 1 second: test it, 2 seconds: test it, 4 seconds: test it, 8 seconds: test it, ...)
+    - You can implement in your system or with modern technologies, such as Service Mesh (Istio), with Istio the circuit breaker is applied in the network (the developer does not worry about it)
+  * API Gateway
+    - All the requests pass through it
+    - Ex: Authentication before the request gets into the services
+    - 
