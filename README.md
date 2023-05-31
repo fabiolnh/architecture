@@ -1,4 +1,4 @@
-# Fundamentals of Software Architecture (Currently Studying)
+# Fundamentals of Software Architecture
 
 ## Types:
 
@@ -219,4 +219,28 @@
   * API Gateway
     - All the requests pass through it
     - Ex: Authentication before the request gets into the services
-    - 
+    - Ex: Rate Limit, Active Health Check, etc.
+  * Service Mesh
+    - Control the network traffic
+    - Ex: Istio
+    - Creating a proxy (sidecar) for the service. Everything passes through the proxy. With it, we can see a lot of information and control the network
+    - Avoid implementing some features inside the system, such as "retry", rate limit, circuit breaker, fault injection, timeout, etc.
+    - With Service Mesh, all the communication can be encrypted (mTLS)
+  * Async Communication
+    - Avoid losing data
+    - With it, we can receive more requests
+    - There is no data loss when we send information if the server is offline (queue)
+    - You send the request to an intermediate
+    - Ex: SQS, Kafka (Message Brokers)
+  * Delivery Guarantee with Retry
+    - If all the services are doing the same time these requests to one system, the probability that the system will stay offline is big
+    - Exponential Backoff: 1 second: test it, 2 seconds: test it, 4 seconds: test it, 8 seconds: test it, ...)
+    - Exponential Backoff with Jitter: each request will differ. Ex: 1.2 second: test it, 2.7 seconds: test it, 4.3 seconds: test it, 8.8 seconds: test it (this way we avoid the simultaneous requests). Prefer to use it.
+  * Delivery Guarantee with Kafka
+    - https://github.com/fabiolnh/kafka#delivery-guarantee
+  * Complex Situations
+    - What happens if your message broker gets offline? 
+    - Will you lose messages?
+    - Your system will get offline?
+    - How to guarantee resilience?
+    - It involves strategies, costs, labor, and risk. The decision has to be made by CTO, CEO, etc., not the developers.
